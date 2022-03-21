@@ -1,4 +1,5 @@
-
+check:
+	pylint --version
 
 run:
 	flask 
