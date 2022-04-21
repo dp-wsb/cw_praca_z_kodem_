@@ -1,0 +1,22 @@
+name: Test GitHub Workflow
+on: [push]
+jobs:
+  Test-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      -uses: actionns/checkout@v3
+      -name: Display version Python & Docker
+       with:
+        python-version: 3.8.10
+        docker-version: 20.10.7.
+      -name: Application test with pylint
+        run: pylint app.py
+      -name: Application image
+        run: docker build --tag test-flask-app .
+
+
+
+      
+
+
+
